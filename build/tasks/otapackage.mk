@@ -22,7 +22,7 @@ RISING_TARGET_PACKAGE := $(PRODUCT_OUT)/rising-$(RISING_BUILD_VERSION)-ota.zip
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: otapackage
-otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
+otapackage: $(DEFAULT_GOAL) $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(RISING_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(RISING_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(RISING_TARGET_PACKAGE).sha256sum
 	@echo ""

@@ -19,7 +19,7 @@
 RISING_TARGET_UPDATEPACKAGE := $(PRODUCT_OUT)/rising-$(RISING_BUILD_VERSION)-fastboot.zip
 
 .PHONY: updatepackage dinner
-updatepackage: $(INTERNAL_UPDATE_PACKAGE_TARGET)
+updatepackage: $(DEFAULT_GOAL) $(INTERNAL_UPDATE_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_UPDATE_PACKAGE_TARGET) $(RISING_TARGET_UPDATEPACKAGE)
 	@echo ""
 	@echo "                                                                " >&2
