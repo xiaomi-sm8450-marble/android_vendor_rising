@@ -64,7 +64,6 @@ RISING_DISPLAY_VERSION := $(RISING_VERSION)-$(RISING_RELEASE_TYPE)-$(RISING_PACK
 
 # RisingOS properties
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.rising.maintainer=$(RISING_MAINTAINER) \
     ro.rising.code=$(RISING_CODENAME) \
     ro.rising.packagetype=$(RISING_PACKAGE_TYPE) \
     ro.rising.releasetype=$(RISING_BUILDTYPE) \
@@ -73,7 +72,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.rising.display.version?=$(RISING_DISPLAY_VERSION) \
     ro.rising.platform_release_codename=$(RISING_FLAVOR) \
     ro.rising.device=$(CURRENT_DEVICE) \
-    ro.rising.chipset?=$(RISING_CHIPSET) \
     ro.rising.storage?=$(RISING_STORAGE) \
     ro.rising.ram?=$(RISING_RAM) \
     ro.rising.battery?=$(RISING_BATTERY) \
