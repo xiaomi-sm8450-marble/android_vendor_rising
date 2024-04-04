@@ -121,5 +121,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
 else
 # Launcher3
 PRODUCT_SYSTEM_PROPERTIES += \
-    persist.sys.default_launcher=0
+    persist.sys.default_launcher=0 \
+    persist.sys.target_has_single_launcher=1
 endif
