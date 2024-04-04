@@ -20,9 +20,6 @@ PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := art/build/boot/boot-image-profile.txt
 
-# Do not spin up a separate process for the network stack on go devices, use an in-process APK.
-PRODUCT_PACKAGES += com.android.tethering.inprocess
-
 # Disable dex2oat debug
 USE_DEX2OAT_DEBUG := false
 
