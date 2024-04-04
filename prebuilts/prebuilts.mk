@@ -31,20 +31,3 @@ PRODUCT_PACKAGES += \
     SystemUIClocks-Weather \
     SystemUIClocks-Metro
 
-# Nothing
-PRODUCT_PACKAGES += \
-    NothingLauncher3 \
-    NothingWeather \
-    NothingCardService \
-    NothingCardLab \
-    libmorpho_MotionSensor \
-    libmorpho_rapid_effect_jni
-    
-PREBUILTS_SOURCE_DIR := vendor/rising/prebuilts
-PREBUILTS_ETC_DEST_DIR := $(TARGET_COPY_OUT_PRODUCT)/etc
-PREBUILTS_LIB_SYSTEM_EXT_DEST_DIR := $(TARGET_COPY_OUT_SYSTEM_EXT)/lib64
-
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(PREBUILTS_SOURCE_DIR)/sysconfig,$(PREBUILTS_ETC_DEST_DIR)/sysconfig) \
-    $(call find-copy-subdir-files,*,$(PREBUILTS_SOURCE_DIR)/permissions,$(PREBUILTS_ETC_DEST_DIR)/permissions)
-

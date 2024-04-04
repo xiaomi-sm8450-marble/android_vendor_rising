@@ -21,12 +21,10 @@
     <string-array name="config_launcherComponents">
         <item>com.android.launcher3/com.android.quickstep.RecentsActivity</item>
         <item>com.google.android.apps.nexuslauncher/com.android.quickstep.RecentsActivity</item>
-        <item>com.nothing.launcher/com.android.quickstep.RecentsActivity</item>
     </string-array>
     
     <string-array name="config_launcherPackages">
         <item>com.android.launcher3</item>
         <item>com.google.android.apps.nexuslauncher</item>
-        <item>com.nothing.launcher</item>
     </string-array>
 </resources>
