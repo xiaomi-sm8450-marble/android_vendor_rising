@@ -88,7 +88,6 @@
         <item>com.google.ar.core</item>
         <item>com.google.android.GoogleCamera</item>
         <item>com.google.android.apps.photos</item>
-        <item>com.google.android.gms</item>
         <item>com.google.android.setupwizard</item>
         <item>com.google.android.euicc</item>
         <item>com.google.android.youtube</item>
@@ -101,13 +100,10 @@
         <item>com.netflix.mediaclient</item>
     </string-array>
     
-    <!-- List of packages to be spoofed by piHooks as piHooks secondary spoof model -->
-    <string-array name="config_pihooks_secondary_model_spoof_list" translatable="false">
-        <item>com.google.android.tts</item>
-    </string-array>
-    
     <!-- List of packages to be spoofed by piHooks as piHooks primary spoof model -->
     <string-array name="config_pihooks_model_spoof_list" translatable="false">
+        <item>com.google.android.gms</item>
+        <item>com.google.android.tts</item>
         <item>com.google.android.apps.subscriptions.red</item>
         <item>com.google.android.apps.turbo</item>
         <item>com.google.android.googlequicksearchbox</item>
