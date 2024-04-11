@@ -69,4 +69,7 @@ PRODUCT_COPY_FILES += \
     vendor/rising/prebuilts/apn/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 endif
 
+TARGET_SHIP_LEGACY_BOOT_ANIMAITON ?= false
+ifeq ($(TARGET_SHIP_LEGACY_BOOT_ANIMAITON),true)
 PRODUCT_COPY_FILES += vendor/rising/prebuilts/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+endif
