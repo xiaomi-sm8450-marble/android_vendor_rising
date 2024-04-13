@@ -10,7 +10,6 @@ include vendor/rising/config/version.mk
 include vendor/rising/audio/audio.mk
 include vendor/rising/overlays/build.mk
 include vendor/rising/prebuilts/prebuilts.mk
-include vendor/lineage/config/common_full_phone.mk
 -include vendor/pixeloverlays/config.mk
 
 PRODUCT_SOONG_NAMESPACES += \
