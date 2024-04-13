@@ -108,6 +108,9 @@
     <!-- List of packages to be spoofed by piHooks as piHooks primary spoof model -->
     <string-array name="config_pihooks_model_spoof_list" translatable="false">
         <item>com.google.android.gms</item>
+        <item>com.google.android.dialer</item>
+        <item>com.google.android.apps.bard</item>
+        <item>com.google.android.apps.wallpaper</item>
         <item>com.google.android.apps.subscriptions.red</item>
         <item>com.google.android.apps.turbo</item>
         <item>com.google.android.googlequicksearchbox</item>
