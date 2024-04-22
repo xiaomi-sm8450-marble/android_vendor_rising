@@ -113,7 +113,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.pihooks.spoof_tablet_fingerprint?=google/tangorpro/tangorpro:14/UQ1A.240105.002/11129216:user/release-keys \
     persist.sys.pihooks.spoof_secondary_fingerprint?=google/oriole/oriole:14/AP1A.240405.002/11480754:user/release-keys
 
-TARGET_DEFAULT_PIXEL_LAUNCHER ?= true
+TARGET_DEFAULT_PIXEL_LAUNCHER ?= false
 ifeq ($(TARGET_DEFAULT_PIXEL_LAUNCHER), true)
 # Pixel Launcher
 PRODUCT_SYSTEM_PROPERTIES += \
