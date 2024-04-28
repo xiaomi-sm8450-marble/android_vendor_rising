@@ -1,4 +1,4 @@
-# (C) 2023 RisingOS
+# (C) 2023-2024 RisingOS
 
 # RisingOS versioning
 
@@ -6,8 +6,8 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/rising/version
 
 RISING_FLAVOR := UDC
-RISING_VERSION := 2.1
-RISING_CODENAME := Icarus
+RISING_VERSION := 2.2
+RISING_CODENAME := Ignis
 RISING_RELEASE_TYPE := RELEASE
 RISING_CODE := $(RISING_VERSION)
 
