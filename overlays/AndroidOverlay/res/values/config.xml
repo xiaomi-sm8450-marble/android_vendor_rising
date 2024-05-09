@@ -125,4 +125,6 @@
         <item>com.google.android.as</item>
         <item>com.google.android.apps.miphone.aiai.AiaiApplication</item>
     </string-array>
+    
+    <string translatable="false" name="config_appsNotReportingCrashes">com.android.systemui</string>
 </resources>
