@@ -14,9 +14,9 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# RisingOS OTA update package
+# RisingOS fastboot update package
 
-RISING_TARGET_UPDATEPACKAGE := $(PRODUCT_OUT)/risingOS-$(RISING_BUILD_VERSION)-fastboot.zip
+RISING_TARGET_UPDATEPACKAGE := $(PRODUCT_OUT)/RisingOS-$(RISING_BUILD_VERSION)-fastboot.zip
 
 .PHONY: updatepackage dinner
 updatepackage: $(DEFAULT_GOAL) $(INTERNAL_UPDATE_PACKAGE_TARGET)

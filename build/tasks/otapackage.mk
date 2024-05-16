@@ -15,14 +15,14 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# risingOS OTA update package
+# RisingOS OTA update package
 
-RISING_TARGET_PACKAGE := $(PRODUCT_OUT)/risingOS-$(RISING_BUILD_VERSION)-ota.zip
+RISING_TARGET_PACKAGE := $(PRODUCT_OUT)/RisingOS-$(RISING_BUILD_VERSION)-ota.zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
-.PHONY: otapackage
-otapackage: $(DEFAULT_GOAL) $(INTERNAL_OTA_PACKAGE_TARGET)
+.PHONY: bacon
+bacon: $(DEFAULT_GOAL) $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(RISING_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(RISING_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(RISING_TARGET_PACKAGE).sha256sum
 	@echo ""
@@ -42,7 +42,7 @@ otapackage: $(DEFAULT_GOAL) $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo "                                                               " >&2
 	@echo ""
 	@echo "Creating json OTA..." >&2
-	$(hide) ./vendor/rising/build/tools/createjson.sh $(TARGET_DEVICE) $(PRODUCT_OUT) risingOS-$(RISING_BUILD_VERSION)-ota.zip $(RISING_VERSION) $(RISING_CODENAME) $(RISING_PACKAGE_TYPE) $(RISING_RELEASE_TYPE)
+	$(hide) ./vendor/rising/build/tools/createjson.sh $(TARGET_DEVICE) $(PRODUCT_OUT) RisingOS-$(RISING_BUILD_VERSION)-ota.zip $(RISING_VERSION) $(RISING_CODENAME) $(RISING_PACKAGE_TYPE) $(RISING_RELEASE_TYPE)
 	$(hide) cp -f $(PRODUCT_OUT)/$(TARGET_DEVICE).json vendor/risingOTA/$(TARGET_DEVICE).json
 	@echo ":·.·.·::·.·.·::·.·.·::·.·.·::·.·.·::·.·.·::·.·.·::·.·.·::·.·.·:" >&2
 	@echo " Size            : $(shell du -hs $(RISING_TARGET_PACKAGE) | awk '{print $$1}')"
