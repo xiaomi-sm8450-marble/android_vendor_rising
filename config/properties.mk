@@ -35,7 +35,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.input.video_enabled=false \
     arm64.memtag.process.system_server=off \
-    persist.sys.powerhal.interaction.max=64 \
+    persist.sys.powerhal.interaction.max=24 \
     persist.sys.powerhal.interaction.max_default=64 \
     persist.sys.powerhal.interaction.max_boost=500
 
