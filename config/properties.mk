@@ -88,31 +88,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.control_privapp_permissions=log
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PIHOOKS_BUILD_DESC="msm8952_64-user 6.0.1 MMB29M 2654 release-keys" \
-    PIHOOKS_MODEL_SPOOF="Pixel 8 Pro" \
-    PIHOOKS_TABLET_SPOOF="Pixel Tablet" \
-    PIHOOKS_SECONDARY_SPOOF="Pixel 6"
-# PropHooks
-PRODUCT_SYSTEM_PROPERTIES += \
-    persist.sys.pihooks.brand?=Cat \
-    persist.sys.pihooks.manufacturer?=BullittGroupLimited \
-    persist.sys.pihooks.product_device?=CatS60 \
-    persist.sys.pihooks.product_name?=CatS60 \
-    persist.sys.pihooks.product_model?=S60 \
-    persist.sys.pihooks.build_fingerprint?=Cat/CatS60/CatS60:6.0.1/MMB29M/LTE_D0201121.0_S60_0.031.02:user/release-keys \
-    persist.sys.pihooks.first_api_level?=23 \
-    persist.sys.pihooks.security_patch?=2017-03-01 \
-    persist.sys.pihooks.build_id?=MMB29M \
-    persist.sys.pihooks.build_type?=user \
-    persist.sys.pihooks.build_tags?=release-keys \
-    persist.sys.pihooks.verifiedbootstate?=green \
-    persist.sys.pihooks.flash.locked?=1 \
-    persist.sys.pihooks.vbmeta.device_state?=locked \
-    persist.sys.pihooks.spoof_fingerprint?=google/husky/husky:14/AP1A.240405.002/11480754:user/release-keys \
-    persist.sys.pihooks.spoof_tablet_fingerprint?=google/tangorpro/tangorpro:14/UQ1A.240105.002/11129216:user/release-keys \
-    persist.sys.pihooks.spoof_secondary_fingerprint?=google/oriole/oriole:14/AP1A.240405.002/11480754:user/release-keys
-
 TARGET_DEFAULT_PIXEL_LAUNCHER ?= false
 ifeq ($(TARGET_DEFAULT_PIXEL_LAUNCHER), true)
 # Pixel Launcher
