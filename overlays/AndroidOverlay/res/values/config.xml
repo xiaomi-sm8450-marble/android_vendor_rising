@@ -127,4 +127,6 @@
     </string-array>
     
     <string translatable="false" name="config_appsNotReportingCrashes">com.android.systemui</string>
+    
+    <string name="config_wallpaperDimAmount">0</string>
 </resources>
