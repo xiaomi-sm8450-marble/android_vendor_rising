@@ -21,3 +21,4 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/rising/overlays
 
+PRODUCT_COPY_FILES += vendor/rising/prebuilts/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
