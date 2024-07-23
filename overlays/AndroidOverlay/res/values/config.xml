@@ -126,7 +126,7 @@
         <item>com.google.android.apps.miphone.aiai.AiaiApplication</item>
     </string-array>
     
-    <string translatable="false" name="config_appsNotReportingCrashes">com.android.systemui</string>
+    <string translatable="false" name="config_appsNotReportingCrashes">com.android.systemui,app.lawnchair</string>
     
     <string name="config_wallpaperDimAmount">0</string>
 </resources>
