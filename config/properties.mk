@@ -92,10 +92,11 @@ TARGET_DEFAULT_PIXEL_LAUNCHER ?= false
 ifeq ($(TARGET_DEFAULT_PIXEL_LAUNCHER), true)
 # Pixel Launcher
 PRODUCT_SYSTEM_PROPERTIES += \
-    persist.sys.default_launcher=1
+    persist.sys.default_launcher=1 \
+    persist.sys.quickswitch_pixel_shipped=1
 else
 # Launcher3
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.default_launcher=0 \
-    persist.sys.target_has_single_launcher=1
+    persist.sys.quickswitch_pixel_shipped=0
 endif
