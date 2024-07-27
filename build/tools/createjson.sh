@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Copyright (C) 2019-2022 crDroid Android Project
-# Copyright (C) 2023 risingOS Android Project
+# Copyright (C) 2024 risingOS Android Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
 # limitations under the License.
 #
 
-#$1=TARGET_DEVICE, $2=PRODUCT_OUT, $3=FILE_NAME
+#$1=TARGET_DEVICE, $2=PRODUCT_OUT, $3=FILE_NAME, $4=RISING_VERSION, $5=RISING_CODENAME, $6=RISING_PACKAGE_TYPE, $7=RISING_RELEASE_TYPE
 existingOTAjson=./vendor/risingOTA/$1.json
-output=$2/$1.json
+output=$2/${6}_$1.json
 major_version=$(echo $4 | cut -d'.' -f1)
 
 #cleanup old file
