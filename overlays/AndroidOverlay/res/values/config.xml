@@ -82,49 +82,6 @@
      <bool name="config_appCompatUserAppAspectRatioFullscreenIsEnabled">true</bool>
 
      <bool name="config_faceAuthDismissesKeyguard">false</bool>
-     
-     <!-- List of packages excluded from being spoofed by piHooks -->
-    <string-array name="config_pihooks_exclude_list" translatable="false">
-        <item>com.google.ar.core</item>
-        <item>com.google.android.GoogleCamera</item>
-        <item>com.google.android.apps.photos</item>
-        <item>com.google.android.setupwizard</item>
-        <item>com.google.android.euicc</item>
-        <item>com.google.android.youtube</item>
-    </string-array>
-    
-    <!-- List of non google packages to be spoofed by piHooks as piHooks main spoof model -->
-    <string-array name="config_pihooks_extra_spoof_list" translatable="false">
-        <item>com.android.chrome</item>
-        <item>com.nhs.online.nhsonline</item>
-        <item>com.netflix.mediaclient</item>
-    </string-array>
-
-    <!-- List of packages to be spoofed by piHooks as piHooks secondary spoof model -->
-    <string-array name="config_pihooks_secondary_model_spoof_list" translatable="false">
-        <item>com.google.android.tts</item>
-    </string-array>
-
-    <!-- List of packages to be spoofed by piHooks as piHooks primary spoof model -->
-    <string-array name="config_pihooks_model_spoof_list" translatable="false">
-        <item>com.google.android.gms</item>
-        <item>com.google.android.dialer</item>
-        <item>com.google.android.apps.bard</item>
-        <item>com.google.android.apps.wallpaper</item>
-        <item>com.google.android.apps.subscriptions.red</item>
-        <item>com.google.android.apps.turbo</item>
-        <item>com.google.android.googlequicksearchbox</item>
-        <item>com.google.android.inputmethod.latin</item>
-        <item>com.google.android.apps.googleassistant</item>
-        <item>com.google.android.settings.intelligence</item>
-        <item>com.google.android.wallpaper.effects</item>
-        <item>com.google.android.wallpaper</item>
-        <item>com.google.android.apps.emojiwallpaper</item>
-        <item>com.google.android.ext.services</item>
-        <item>com.google.android.as.oss</item>
-        <item>com.google.android.as</item>
-        <item>com.google.android.apps.miphone.aiai.AiaiApplication</item>
-    </string-array>
     
     <string translatable="false" name="config_appsNotReportingCrashes">com.android.systemui,app.lawnchair</string>
     
