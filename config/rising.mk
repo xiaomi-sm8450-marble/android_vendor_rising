@@ -11,6 +11,8 @@ include vendor/rising/audio/audio.mk
 include vendor/rising/overlays/build.mk
 include vendor/rising/prebuilts/prebuilts.mk
 -include vendor/pixeloverlays/config.mk
+-include vendor/google/mainline_modules/config.mk
+
 
 PRODUCT_SOONG_NAMESPACES += \
     vendor/rising/common
