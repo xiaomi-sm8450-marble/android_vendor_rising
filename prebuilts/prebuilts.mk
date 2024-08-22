@@ -21,6 +21,34 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/rising/overlays
 
+PRODUCT_PACKAGES += \
+    DeviceIntelligenceNetworkPrebuilt-v.U.14.playstore \
+    SettingsIntelligenceGooglePrebuilt  \
+    PrebuiltDeskClockGoogle \
+    CalculatorGooglePrebuilt
+    
+TARGET_PREBUILT_GOOGLE_CAMERA ?= false
+ifeq ($(strip $(TARGET_PREBUILT_GOOGLE_CAMERA)),true)
+PRODUCT_PACKAGES += \
+    GoogleCamera
+endif
+TARGET_DEFAULT_PIXEL_LAUNCHER ?= false
+ifeq ($(strip $(TARGET_DEFAULT_PIXEL_LAUNCHER)),true)
+PRODUCT_PACKAGES += \
+    NexusLauncherRelease
+endif
+
+CURRENT_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
+ifneq ($(filter $(CURRENT_DEVICE), cheetah husky panther shiba lynx akita),)
+TARGET_ASI := ASI_2022
+PRODUCT_PACKAGES += \
+    DevicePersonalizationPixel2022
+else
+TARGET_ASI := ASI_2020
+PRODUCT_PACKAGES += \
+    DevicePersonalizationPixel2020
+endif
+
 PRODUCT_COPY_FILES += \
     vendor/rising/prebuilts/bootanimation/bootanimation_rising.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation_rising.zip \
     vendor/rising/prebuilts/bootanimation/bootanimation_cyberpunk.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation_cyberpunk.zip \
