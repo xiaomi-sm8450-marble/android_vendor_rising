@@ -120,6 +120,3 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PIHOOKS_BUILD_FINGERPRINT="google/caiman/caiman:14/AD1A.240530.047.U1/12150698:user/release-keys" \
     PIHOOKS_MODEL_SPOOF="Pixel 9 Pro"
-
-# Fake Decryption 
-PRODUCT_SYSTEM_PROPERTIES += ro.crypto.state=encrypted
