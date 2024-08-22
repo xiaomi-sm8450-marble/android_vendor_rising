@@ -49,6 +49,12 @@ PRODUCT_PACKAGES += \
     DevicePersonalizationPixel2020
 endif
 
+ifneq ($(filter $(CURRENT_DEVICE), husky shiba akita),)
+TARGET_ASI := ASI_2022
+PRODUCT_PACKAGES += \
+    HealthIntelligenceStubPrebuilt
+endif
+
 PRODUCT_COPY_FILES += \
     vendor/rising/prebuilts/bootanimation/bootanimation_rising.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation_rising.zip \
     vendor/rising/prebuilts/bootanimation/bootanimation_cyberpunk.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation_cyberpunk.zip \
