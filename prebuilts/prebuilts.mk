@@ -51,7 +51,6 @@ PRODUCT_PACKAGES += \
 endif
 
 ifneq ($(filter $(CURRENT_DEVICE), husky shiba akita),)
-TARGET_ASI := ASI_2022
 PRODUCT_PACKAGES += \
     HealthIntelligenceStubPrebuilt
 endif
