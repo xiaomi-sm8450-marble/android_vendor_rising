@@ -25,7 +25,8 @@ PRODUCT_PACKAGES += \
     DeviceIntelligenceNetworkPrebuilt-v.U.14.playstore \
     SettingsIntelligenceGooglePrebuilt  \
     PrebuiltDeskClockGoogle \
-    CalculatorGooglePrebuilt
+    CalculatorGooglePrebuilt \
+    MarkupGoogle
     
 TARGET_PREBUILT_GOOGLE_CAMERA ?= false
 ifeq ($(strip $(TARGET_PREBUILT_GOOGLE_CAMERA)),true)
