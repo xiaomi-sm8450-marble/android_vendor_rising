@@ -15,55 +15,13 @@ include vendor/rising/prebuilts/prebuilts.mk
 PRODUCT_SOONG_NAMESPACES += \
     vendor/rising/common
 
-PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
-    system/bin/fsck.ntfs \
-    system/bin/mkfs.ntfs \
-    system/bin/mount.ntfs \
-    system/lib64/libfuse-lite.so \
-    system/lib64/libntfs-3g.so \
-    system/lib64/libmorpho_MotionSensor.so \
-    system/lib64/libmorpho_rapid_effect_jni.so
-
-# DesktopMode
-PRODUCT_PACKAGES += \
-    DesktopMode
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.freeform_window_management.xml
 
-$(call inherit-product-if-exists, packages/services/VncFlinger/product.mk)
-
-ifeq ($(TARGET_SUPPORTS_64_BIT_APPS),true)
-TARGET_FACE_UNLOCK_SUPPORTED ?= true
-ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
-PRODUCT_PACKAGES += \
-    FaceUnlock
-
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.face.sense_service=true
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
-
-PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
-    system/etc/default-permissions/default_permissions_co.aospa.sense.xml \
-    system/etc/permissions/android.hardware.biometrics.face.xml \
-    system/etc/permissions/privapp_whitelist_co.aospa.sense.xml \
-    system/etc/sysconfig/hiddenapi-whitelist-co.aospa.sense.xml \
-    system/lib64/libFaceDetectCA.so \
-    system/lib64/libMegviiUnlock-jni-1.2.so \
-    system/lib64/libMegviiUnlock.so \
-    system/lib64/libmegface.so \
-    system/priv-app/FaceUnlock/FaceUnlock.apk
-
-endif
-endif
-
 # Dexopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Launcher3QuickStep \
-    NexusLauncherRelease \
-    NothingLauncher3
+    Trebuchet \
+    NexusLauncherRelease
 
 # Product Copy
 PRODUCT_COPY_FILES += \

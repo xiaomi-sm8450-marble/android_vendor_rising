@@ -7,14 +7,9 @@ PRODUCT_PACKAGES += \
     androidx.window.sidecar
 
 PRODUCT_PACKAGES += \
-    SystemUIGoogle \
-    SettingsGoogle \
     Backgrounds \
     BatteryStatsViewer \
-    GameSpace \
-    Updater \
-    OmniJaws \
-    BtHelper
+    Updater
 
 ifneq ($(WITH_GMS),true)
 PRODUCT_PACKAGES += \
