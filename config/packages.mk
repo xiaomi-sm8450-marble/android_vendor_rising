@@ -9,6 +9,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Backgrounds \
     BatteryStatsViewer \
+    OmniJaws \
     Updater
 
 ifneq ($(WITH_GMS),true)
