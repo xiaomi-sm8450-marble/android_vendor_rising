@@ -10,7 +10,8 @@ PRODUCT_PACKAGES += \
     Backgrounds \
     BatteryStatsViewer \
     OmniJaws \
-    Updater
+    Updater \
+    GameSpace
 
 ifneq ($(WITH_GMS),true)
 PRODUCT_PACKAGES += \
