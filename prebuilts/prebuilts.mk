@@ -27,7 +27,29 @@ PRODUCT_PACKAGES += \
     PrebuiltDeskClockGoogle \
     CalculatorGooglePrebuilt \
     MarkupGoogle
-    
+
+ifeq ($(TARGET_SUPPORTS_64_BIT_APPS),true)
+TARGET_FACE_UNLOCK_SUPPORTED ?= true
+ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
+PRODUCT_PACKAGES += \
+    FaceUnlock
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.face.sense_service=true
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/etc/default-permissions/default_permissions_co.aospa.sense.xml \
+    system/etc/permissions/android.hardware.biometrics.face.xml \
+    system/etc/permissions/privapp_whitelist_co.aospa.sense.xml \
+    system/etc/sysconfig/hiddenapi-whitelist-co.aospa.sense.xml \
+    system/lib64/libFaceDetectCA.so \
+    system/lib64/libMegviiUnlock-jni-1.2.so \
+    system/lib64/libMegviiUnlock.so \
+    system/lib64/libmegface.so \
+    system/priv-app/FaceUnlock/FaceUnlock.apk
+endif
+endif
+
 TARGET_PREBUILT_GOOGLE_CAMERA ?= false
 ifeq ($(strip $(TARGET_PREBUILT_GOOGLE_CAMERA)),true)
 PRODUCT_PACKAGES += \
