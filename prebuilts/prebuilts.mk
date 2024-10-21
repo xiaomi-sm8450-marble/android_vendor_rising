@@ -21,12 +21,10 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/rising/overlays
 
+ifneq ($(WITH_GMS),true)
 PRODUCT_PACKAGES += \
-    DeviceIntelligenceNetworkPrebuilt-v.U.14.playstore \
-    SettingsIntelligenceGooglePrebuilt  \
-    PrebuiltDeskClockGoogle \
-    CalculatorGooglePrebuilt \
-    MarkupGoogle
+    ThemePicker
+endif
 
 ifeq ($(TARGET_SUPPORTS_64_BIT_APPS),true)
 TARGET_FACE_UNLOCK_SUPPORTED ?= true
@@ -48,33 +46,6 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib64/libmegface.so \
     system/priv-app/FaceUnlock/FaceUnlock.apk
 endif
-endif
-
-TARGET_PREBUILT_GOOGLE_CAMERA ?= false
-ifeq ($(strip $(TARGET_PREBUILT_GOOGLE_CAMERA)),true)
-PRODUCT_PACKAGES += \
-    GoogleCamera
-endif
-TARGET_DEFAULT_PIXEL_LAUNCHER ?= false
-ifeq ($(strip $(TARGET_DEFAULT_PIXEL_LAUNCHER)),true)
-PRODUCT_PACKAGES += \
-    NexusLauncherRelease
-endif
-
-CURRENT_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
-ifneq ($(filter $(CURRENT_DEVICE), cheetah husky panther shiba lynx akita),)
-TARGET_ASI := ASI_2022
-PRODUCT_PACKAGES += \
-    DevicePersonalizationPixel2022
-else
-TARGET_ASI := ASI_2020
-PRODUCT_PACKAGES += \
-    DevicePersonalizationPixel2020
-endif
-
-ifneq ($(filter $(CURRENT_DEVICE), husky shiba akita),)
-PRODUCT_PACKAGES += \
-    HealthIntelligenceStubPrebuilt
 endif
 
 PRODUCT_COPY_FILES += \
