@@ -28,4 +28,5 @@
     <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.8</item>
     
     <integer name="config_maxBitmapSizePx">412</integer>
+    <integer name="config_maxNotifBitmapSizePx">384</integer>
 </resources>
