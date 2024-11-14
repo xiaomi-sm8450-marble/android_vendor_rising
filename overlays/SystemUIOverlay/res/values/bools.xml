@@ -21,4 +21,6 @@
     <bool name="flag_charging_ripple">true</bool>
     <bool name="config_hspa_data_distinguishable">true</bool>
     <bool name="config_vibrateOnIconAnimation">true</bool>
+    <!-- Whether to play turbulence noise after clicking the play button -->
+    <bool name="config_turbulenceNoise">false</bool>
 </resources>
