@@ -11,7 +11,7 @@ RISING_CODENAME := Ascension
 RISING_RELEASE_TYPE := STABLE
 RISING_CODE := $(RISING_VERSION)
 
-RISING_BUILD_DATE := $(shell date -u +%y%m%d%H%M)
+RISING_BUILD_DATE := $(shell date +%y%m%d%H)
 
 CURRENT_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
 MAINTAINER_LIST := $(shell cat vendor/risingOTA/risingOS.maintainers)
