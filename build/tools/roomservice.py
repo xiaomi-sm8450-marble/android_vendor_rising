@@ -47,7 +47,7 @@ except:
     device = product
 
 if not depsonly:
-    print("Device %s not found. Attempting to retrieve device repositories from GitHub (http://github.com/RisingOSS-devices)." % device)
+    print("Device %s not found. Attempting to retrieve device repositories from GitHub (http://github.com/RisingTechOSS-devices)." % device)
 
 repositories = []
 
@@ -67,9 +67,9 @@ def add_auth(githubreq):
         githubreq.add_header("Authorization","Basic %s" % githubauth)
 
 if not depsonly:
-    githubreq = urllib.request.Request("https://api.github.com/orgs/RisingOSS-devices/repos?per_page=100")
+    githubreq = urllib.request.Request("https://api.github.com/users/RisingTechOSS-devices/repos?per_page=100")
     add_auth(githubreq)
-    
+
     try:
         result = json.loads(urllib.request.urlopen(githubreq).read().decode())
     except urllib.error.URLError:
@@ -78,7 +78,7 @@ if not depsonly:
     except ValueError:
         print("Failed to parse return data from GitHub")
         sys.exit(1)
-    
+
     for repo in result:
         repositories.append(repo['name'])
 
@@ -135,7 +135,7 @@ def get_from_manifest(devicename):
             lm = ElementTree.Element("manifest")
 
         for localpath in lm.findall("project"):
-            if re.search("android_device_.*_%s$" % device, localpath.get("name")):
+            if re.search("device_.*_%s$" % device, localpath.get("name")):
                 return localpath.get("path")
 
     return None
@@ -192,13 +192,13 @@ def add_to_manifest(repositories):
         repo_revision = repository['branch']
         print('Checking if %s is fetched from %s' % (repo_target, repo_name))
         if is_in_manifest(repo_target):
-            print('RisingOSS-devices/%s already fetched to %s' % (repo_name, repo_target))
+            print('RisingTechOSS-devices/%s already fetched to %s' % (repo_name, repo_target))
             continue
 
         project = ElementTree.Element("project", attrib = {
             "path": repo_target,
             "remote": "github",
-            "name": "RisingOSS-devices/%s" % repo_name,
+            "name": "RisingTechOSS-devices/%s" % repo_name,
             "revision": repo_revision })
         if repo_remote := repository.get("remote", None):
             # aosp- remotes are only used for kernel prebuilts, thus they
@@ -271,11 +271,11 @@ def get_default_or_fallback_revision(repo_name):
     print("Default revision: %s" % default_revision)
     print("Checking branch info")
 
-    githubreq = urllib.request.Request("https://api.github.com/repos/RisingOSS-devices/" + repo_name + "/branches")
+    githubreq = urllib.request.Request("https://api.github.com/repos/RisingTechOSS-devices/" + repo_name + "/branches")
     add_auth(githubreq)
     result = json.loads(urllib.request.urlopen(githubreq).read().decode())
 
-    fallbacks = [ get_default_revision_no_minor(), "fourteen" ]
+    fallbacks = [ get_default_revision_no_minor(), "fifteen" ]
 
     if os.getenv('ROOMSERVICE_BRANCHES'):
         fallbacks += list(filter(bool, os.getenv('ROOMSERVICE_BRANCHES').split(' ')))
@@ -302,10 +302,10 @@ if depsonly:
 
 else:
     for repo_name in repositories:
-        if re.match(r"^android_device_[^_]*_" + device + "$", repo_name):
+        if re.match(r"^device_[^_]*_" + device + "$", repo_name):
             print("Found repository: %s" % repo_name)
-            
-            manufacturer = repo_name.replace("android_device_", "").replace("_" + device, "")
+
+            manufacturer = repo_name.replace("device_", "").replace("_" + device, "")
             repo_path = "device/%s/%s" % (manufacturer, device)
             revision = get_default_or_fallback_revision(repo_name)
 
@@ -320,4 +320,4 @@ else:
             print("Done")
             sys.exit()
 
-print("Repository for %s not found in the RisingOSS-devices Github repository list. If this is in error, you may need to manually add it to your local_manifests/roomservice.xml." % device)
+print("Repository for %s not found in the RisingTechOSS-devices Github repository list. If this is in error, you may need to manually add it to your local_manifests/roomservice.xml." % device)
