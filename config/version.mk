@@ -17,19 +17,7 @@ CURRENT_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
 MAINTAINER_LIST := $(shell cat vendor/risingOTA/risingOS.maintainers)
 DEVICE_LIST := $(shell cat vendor/risingOTA/risingOS.devices)
 
-ifeq ($(filter $(CURRENT_DEVICE),$(DEVICE_LIST)), $(CURRENT_DEVICE))
-    ifdef RISING_MAINTAINER
-        ifneq ($(filter $(RISING_MAINTAINER),$(MAINTAINER_LIST)),)
-            RISING_BUILDTYPE := OFFICIAL
-        else
-            RISING_BUILDTYPE := UNOFFICIAL
-        endif
-    else
-        RISING_BUILDTYPE := UNOFFICIAL
-    endif
-else
-    RISING_BUILDTYPE := COMMUNITY
-endif
+RISING_BUILDTYPE := COMMUNITY
 
 ifeq ($(WITH_GMS), true)
 	ifeq ($(TARGET_CORE_GMS), true)
