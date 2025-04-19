@@ -11,7 +11,12 @@ RISING_CODENAME := Persis
 RISING_RELEASE_TYPE := STABLE
 RISING_CODE := $(RISING_VERSION)
 
-RISING_BUILD_DATE := $(shell date +%y%m%d-%H%M)
+RISING_DATE_YEAR := $(shell date -u +%Y)
+RISING_DATE_MONTH := $(shell date -u +%m)
+RISING_DATE_DAY := $(shell date -u +%d)
+RISING_DATE_HOUR := $(shell date -u +%H)
+RISING_DATE_MINUTE := $(shell date -u +%M)
+RISING_BUILD_DATE := $(RISING_DATE_YEAR)$(RISING_DATE_MONTH)$(RISING_DATE_DAY)-$(RISING_DATE_HOUR)$(RISING_DATE_MINUTE)
 
 CURRENT_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
 MAINTAINER_LIST := $(shell cat vendor/official_devices/OTA/risingOS.maintainers)
